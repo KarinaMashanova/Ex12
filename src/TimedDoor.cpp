@@ -21,14 +21,12 @@ void TimedDoor::unlock() {
   n.tregister((*this).iTimeout, (*this).adapter);
 }
 void TimedDoor::lock() { opened = false; }
-void TimedDoor::DoorTimeOut() {
-  throw("close the door!");
-}
+void TimedDoor::DoorTimeOut() { throw(std::string("close the door!")); }
 void TimedDoor::throwState() {
   if (!isDoorOpened()) {
-    throw("the door is closed!");
+    throw(std::string("the door is closed!"));
   } else {
-    throw("the door is opened!");
+    throw(std::string("the door is opened!"));
   }
 }
 void Timer::sleep(int _t) {

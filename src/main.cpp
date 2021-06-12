@@ -5,7 +5,10 @@
 
 int main() {
   TimedDoor tDoor(5);
-  tDoor.lock();
-  tDoor.unlock();
-  return 0;
+  try {
+    tDoor.lock();
+    tDoor.throwState();
+  } catch (std::string message) {
+    std::cout << message;
+  }
 }
